@@ -33,7 +33,7 @@ metadata:
   name: repo3
   description: This is repo3 related to the engineering group.
   annotations:
-    github.com/repo-url: https://github.com/helleu/repo3
+    github.com/project-slug: helleu/repo2
 spec:
   type: service
   lifecycle: production
@@ -48,7 +48,8 @@ metadata:
   name: repo2
   description: This is repo2 which includes the definition of the engineering group and its connection to repo3.
   annotations:
-    github.com/repo-url: https://github.com/helleu/repo2
+    github.com/project-slug: helleu/repo2
+    github.com/team-slug: helleu/engineering
 spec:
   type: service
   lifecycle: production
