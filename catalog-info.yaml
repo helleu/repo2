@@ -1,0 +1,55 @@
+# User Definition
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: jdoe
+  annotations:
+    github.com/user-login: jdoe
+spec:
+  profile:
+    displayName: John Doe
+    email: jdoe@example.com
+  memberOf: [engineering]
+
+---
+
+# Group Definition
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: engineering
+spec:
+  type: team
+  profile:
+    displayName: Engineering Team
+  children: [backend-team]
+
+---
+
+# Connection to Repository (repo3)
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: repo3
+  description: This is repo3 related to the engineering group.
+  annotations:
+    github.com/repo-url: https://github.com/helleu/repo3
+spec:
+  type: service
+  lifecycle: production
+  owner: engineering
+
+---
+
+# Repository Definition (repo2)
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: repo2
+  description: This is repo2 which includes the definition of the engineering group and its connection to repo3.
+  annotations:
+    github.com/repo-url: https://github.com/helleu/repo2
+spec:
+  type: service
+  lifecycle: production
+  owner: engineering
