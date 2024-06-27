@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: another-service
-  description: A description of another service
+  name: my-service
+  description: A description of my service
   owner: ashwin-tide
   annotations:
     github.com/project-slug: helleu/repo2
@@ -15,8 +15,22 @@ spec:
   type: service
   lifecycle: production
   owner: ashwin-tide
-  dependsOn:
-    - my-service
-  providesApis: []
-  consumesApis: 
+  dependsOn: []
+  providesApis: 
     - my-service-api
+  consumesApis: []
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: my-service-api
+  description: OpenAPI definition for my service
+  owner: ashwin-tide
+spec:
+  type: openapi
+  lifecycle: production
+  owner: ashwin-tide
+  definition:
+    $text: https://petstore.swagger.io/v2/swagger.json
