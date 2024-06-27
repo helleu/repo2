@@ -16,7 +16,7 @@ spec:
   lifecycle: production
   owner: ashwin-tide
   dependsOn: 
-    - my-service
+    - component:my-service
   providesApis: []
   consumesApis: 
     - my-service-api
