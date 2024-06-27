@@ -16,21 +16,8 @@ spec:
   lifecycle: production
   owner: ashwin-tide
   dependsOn: []
-  providesApis: 
+  providesApis: []
+  consumesApis: 
     - my-service-api
-  consumesApis: []
 
----
-
-apiVersion: backstage.io/v1alpha1
-kind: API
-metadata:
-  name: my-service-api
-  description: OpenAPI definition for my service
-  owner: ashwin-tide
-spec:
-  type: openapi
-  lifecycle: production
-  owner: ashwin-tide
-  definition:
-    $text: https://petstore.swagger.io/v2/swagger.json
+  
