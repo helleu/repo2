@@ -15,7 +15,8 @@ spec:
   type: service
   lifecycle: production
   owner: ashwin-tide
-  dependsOn: []
+  dependsOn: 
+    - my-service
   providesApis: []
   consumesApis: 
     - my-service-api
